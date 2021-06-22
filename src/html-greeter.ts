@@ -8,6 +8,6 @@ export class HtmlGreeter extends Greeter {
     }
 
     greet(name: string): string {
-        return `${this.tagName}What's happenin' ${name}${this.tagName}?`
+        return `${this.tagName} ${this.greeting} ${name}${this.tagName}?`
     }
 }

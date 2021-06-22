@@ -6,6 +6,6 @@ export class JavaScriptGreeter extends Greeter {
     }
 
     greet(name: string): string {
-        return `console.log('Hello, ${name}!')`
+        return `console.log('${this.greeting} ${name}!')`
     }
 }
