@@ -14,7 +14,7 @@ describe('Test Greeter method', () =>{
     const javaScriptGreeter1: JavaScriptGreeter = new JavaScriptGreeter('This is Java Greeting 1');
     const loudGreeter: LoudGreeter = new LoudGreeter('Loud greeting for');
     const loudGreeter2: LoudGreeter = new LoudGreeter('Loud greeting for');
-    const htmlGreeter: HtmlGreeter = new HtmlGreeter('HTML greeting for');
+    const htmlGreeter: HtmlGreeter = new HtmlGreeter('HTML greeting for', '<h1>');
 
 
 
@@ -24,7 +24,7 @@ describe('Test Greeter method', () =>{
     loudGreeter.greet('Jax');
     loudGreeter2.greet('Maxine');
     loudGreeter2.addVolume();
-
+    htmlGreeter.greet('Matoi');
 
 
 
@@ -38,22 +38,28 @@ describe('Test Greeter method', () =>{
         expect(greeter1.greet('Austin')).toEqual('This is greeting1, Austin!');
     })
     // Java Greeter
-    test('Test Jave Greeter', () => {
+    test('Test Java Greeter', () => {
         expect(javaScriptGreeter1.greeting).toEqual('This is Java Greeting 1');
     })
-    test('Test Jave Greeter to have name Samuel', () => {
+    test('Test Java Greeter to have name Samuel', () => {
         expect(javaScriptGreeter1.greet('Samuel')).toEqual(`console.log('This is Java Greeting 1 Samuel!')`);
     })
     // Loud greeter
     test('Test Loud Greeter', () => {
         expect(loudGreeter.greeting).toEqual('Loud greeting for');
     })
-    test('Test Jave Greeter to have name Jax', () => {
+    test('Test Loud Greeter to have name Jax', () => {
         expect(loudGreeter.greet('Jax')).toEqual(`Loud greeting for Jax !!`);
     })
     // testing addVolume functionality
-    test('Test Jave Greeter to have name Maxine with three !!!', () => {
+    test('Test Loud Greeter to have name Maxine with three !!!', () => {
         expect(loudGreeter2.greet('Maxine')).toEqual(`Loud greeting for Maxine !!!`);
     })
-
+    // testing  HTML Greeter
+    test('Test HTML Greeting', () => {
+        expect(htmlGreeter.greeting).toEqual('HTML greeting for');
+    })
+    test('HTML Greeter function', () => {
+        expect(htmlGreeter.greet('Matoi')).toEqual(`<h1>HTML greeting for Matoi.<h1>`);
+    })
 })
